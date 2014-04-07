@@ -1,0 +1,25 @@
+{
+  "name": "sharepoint-forms-ext",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Saturate/sharepoint-forms-ext",
+  "authors": [
+    "Allan Kimmer Jensen <allankimmerjensen@gmail.com>"
+  ],
+  "description": "A little library to work with SharePoint NewForm and EditForm.",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "sharepoint",
+    "newform",
+    "editform"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

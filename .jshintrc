@@ -22,7 +22,6 @@
         "define": true,
         "require": true,
         "requirejs": true,
-        "Backbone": true,
-        "_": true
+        "SPClientPeoplePicker": true
     }
 }

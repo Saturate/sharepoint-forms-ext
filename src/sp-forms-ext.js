@@ -1,4 +1,6 @@
 define(['jquery'], function($) {
+    'use strict';
+
     var SPFormsExt = function () {
         var self = this;
         /*
@@ -34,7 +36,7 @@ define(['jquery'], function($) {
                 return this.settings.fieldNames[field];
             }
             
-            return field; 
+            return field;
         },
 
         /*
@@ -43,7 +45,7 @@ define(['jquery'], function($) {
         findBodyFromFieldName: function (fieldname) {
             var self = this;
             // Make sure we only get a match where all of the text is the field name via the filter function
-            return $(".ms-formlabel .ms-standardheader:contains('" + self.getField(fieldname) + "')")
+            return $('.ms-formlabel .ms-standardheader:contains("' + self.getField(fieldname) + '")')
                 .filter(function(i,elm) {
                     var elmTxt = $(elm).text().replace('*','').trim();
                     if (elmTxt === self.getField(fieldname)) {
@@ -88,8 +90,8 @@ define(['jquery'], function($) {
             var self = this;
             var $formBody = self.findBodyFromFieldName(fieldname);
 
-            $formBody.find("select option").filter(function() {
-                return $(this).text() == value;
+            $formBody.find('select option').filter(function() {
+                return $(this).text() === value;
             }).attr('selected', true);
         },
 
@@ -103,8 +105,8 @@ define(['jquery'], function($) {
             $formBody.find('[type="checkbox"]').prop('checked', value);
         },
         findPeoplePicker: function (fieldname) {
-            var ppDiv = $("[id$='ClientPeoplePicker'][title='" + fieldname + "']");
-            var ppEditor= ppDiv.find("[title='" + fieldname + "']");
+            var ppDiv = $('[id$="ClientPeoplePicker"][title="' + fieldname + '"]');
+            var ppEditor = ppDiv.find('[title="' + fieldname + '"]');
             var spPP = SPClientPeoplePicker.SPClientPeoplePickerDict[ppDiv[0].id];
 
             return {
@@ -120,7 +122,7 @@ define(['jquery'], function($) {
 
             pp.editor.val(value);
             // Resolve the User if (!spPP.HasInputError) 
-            pp.sp.AddUnresolvedUserFromEditor(true); 
+            pp.sp.AddUnresolvedUserFromEditor(true);
         },
         getPeoplePicker: function (fieldname) {
             var pp = this.findPeoplePicker(fieldname);
@@ -133,7 +135,7 @@ define(['jquery'], function($) {
         */
         findBusinessDataValue: function (entityDataString, key) {
             var entityData = $.parseXML(entityDataString);
-            var uuid = $(entityData).find("Key:contains('" + key + "')").parent().find('Value').text();
+            var uuid = $(entityData).find('Key:contains("' + key + '")').parent().find('Value').text();
 
             return uuid;
         },

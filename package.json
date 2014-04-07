@@ -1,0 +1,16 @@
+{
+  "name": "sharepoint-forms-ext",
+  "version": "0.0.1",
+  "dependencies": {},
+  "scripts": {
+    "test": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "~3.6",
+    "gulp-jshint": "~1.4.0",
+    "gulp-uglify": "~0.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
