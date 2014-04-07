@@ -23,10 +23,6 @@ define(['jquery'], function($) {
             fieldNames: {}
         },
         checkIfBusinessDataChangedCache: {},
-        test: function () {
-            console.log('test');
-
-        },
         /*
             Get field from settings, or just return it as-is.
             Useful for quick config when labels change.
