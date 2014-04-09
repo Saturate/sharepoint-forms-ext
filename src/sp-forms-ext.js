@@ -1,8 +1,22 @@
+/**
+* name    : SPFormsExt
+* version : 0.0.1
+* author  : Allan kimmer Jensen
+* website : https://github.com/Saturate/sharepoint-forms-ext
+*/
 define(['jquery'], function($) {
     'use strict';
 
-    var SPFormsExt = function () {
+    var SPFormsExt = function (options) {
         var self = this;
+
+        var defaults = {
+            fieldNames: {},
+            changedCheckInterval: 1000
+        };
+
+        $.extend(this.settings, defaults, options);
+
         /*
             Listen to all BusinessData fields,
             We can't tell them apart.
@@ -13,7 +27,7 @@ define(['jquery'], function($) {
 
             setInterval(function() {
                 self.checkIfBusinessDataChanged($this);
-            }, 1000);
+            }, self.settings.changedCheckInterval);
         });
 
     };
