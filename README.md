@@ -2,13 +2,18 @@ sharepoint-forms-ext
 ====================
 [![Build Status](https://travis-ci.org/Saturate/sharepoint-forms-ext.png)](https://travis-ci.org/Saturate/sharepoint-forms-ext)
 
-A little library to work with SharePoint NewForm and EditForm. Only tested with SP 2013.
-
+A little library to work with SharePoint NewForm and EditForm. Only tested with SP 2013.   
+It will look for the correct rows in a `.ms-formtable` table.
 
 ## Features
+- Set field values:
+	- PeoplePicker
+	- Checkbox
+	- Select
+	- SPBusinessData
+	- Taxonomy
+- Get field values.
 - Listen for change on `SPBusinessData` fields.
-- Find a input based on row name.
-- Get/Set SharePoint PeoplePicker.
 - More (Look at the source, it's pretty simple).
 
 ## TODO & Bugs
@@ -16,9 +21,12 @@ A little library to work with SharePoint NewForm and EditForm. Only tested with 
 
 ## Usage
 
-	require(['sp-forms-ext'], function(SPFormsExt) {
-		var foo = new SPFormsExt();
+	var form = new SPFormsExt();
+	form.setField('FIELD_NAME', 'Wernstrom!');
 
-		// Set a SPBusinessDataField
-		foo.setBusinessDataField('FIELD_NAME', 'TEST');
+or with RequireJS:
+
+	require(['sp-forms-ext'], function(SPFormsExt) {
+		var form = new SPFormsExt();
+		form.setField('FIELD_NAME', 'Why not Zoidberg?');
 	})
