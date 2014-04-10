@@ -14,6 +14,9 @@
     "newform",
     "editform"
   ],
+  "dependencies": {
+    "jquery": "*"
+  },
   "license": "MIT",
   "ignore": [
     "node_modules",
