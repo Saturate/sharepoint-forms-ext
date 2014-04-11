@@ -12,7 +12,8 @@
   "keywords": [
     "sharepoint",
     "newform",
-    "editform"
+    "editform",
+    "SPBusinessData"
   ],
   "dependencies": {
     "jquery": "*"
@@ -22,6 +23,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "gulpfile.js",
+    "package.json",
+    ".travis.yml"
   ]
 }
